@@ -1,0 +1,18 @@
+ls: list that shows what you have in that directory 
+ls -l: flag that gives an extra info 
+ls -a: displays hidden files and directories
+ls -al: both 
+cd (directory): change directory to 
+cd: go back to home  dirctory 
+clear: ctl + l 
+code: open up the file 
+code.: open all the files in that directory 
+~: shortcut for the home directory 
+mkdir: create new directories 
+mv: rename files/move it from the first location to second lcation 
+rm -r: delete direcotry 
+touch (filename.txt): create new files 
+man (command): manual for command 
+.: shortcut for the current directory 
+..: shortcut for the parent direcotry 
+...: shortcut for the grandparent directory 
