@@ -8,15 +8,18 @@ print(stops)
 stops.insert(0, "Glasgow Queen St")
 print(stops)
 #3. Add "Polmont" at the appropriate point (between "Falkirk High" and "Linlithgow")
-stops.insert(3, "Polmont") # insert method adds data to the list BEFORE the element at the index number you type 
+stops.insert(4, "Polmont") # insert method adds data to the list BEFORE the element at the index number you type 
 print(stops)
 #4. Print out the index position of "Linlithgow"
-print(stops[3])
+print(stops.index("Linlithgow"))
 #5. Remove "Livingston" from the list using its name
 stops.remove("Livingston") # remove method removes the mathcing element from the list 
 print(stops)
 #6. Delete "Cumbernauld" from the list by index
 stops.pop(2)
+# OR 
+#Cumbernauld_index = stops.index("Cumbernauld")
+#stops.pop(Cumbernauld_index)
 print(stops)
 #7. Print the number of stops there are in the list
 print(len(stops))
@@ -98,13 +101,13 @@ print(users["Erik"]["lottery_numbers"])
 # 4. Get the species of Avril's pet Monty
 print(users["Avril"]["pets"][0]["species"])
 # 5. Get the smallest of Erik's lottery numbers
-smallest = min(users["Erik"]["lottery_numbers"]) # min function finds the smallest number in the lit 
+smallest = min(users["Erik"]["lottery_numbers"]) # min function finds the smallest number in the list 
 print(smallest)
 # 6. Return an list of Avril's lottery numbers that are even
 def only_even(my_list):
     even_list = []
     for element in my_list: 
-        if element % 2 != 1: 
+        if element % 2 == 0: 
             even_list.append(element)
     return even_list
 print(only_even(users["Avril"]["lottery_numbers"]))
