@@ -1,95 +1,71 @@
-# Let's begin with the Exercise A: 
+# Let's begin with the Exercise A:
 
-stops = [ "Croy", "Cumbernauld", "Falkirk High", "Linlithgow", "Livingston", "Haymarket" ]
-#1. Add "Edinburgh Waverley" to the end of the list
+stops = ["Croy", "Cumbernauld", "Falkirk High", "Linlithgow", "Livingston", "Haymarket"]
+# 1. Add "Edinburgh Waverley" to the end of the list
 stops.append("Edinburgh Waverley")
 print(stops)
-#2. Add "Glasgow Queen St" to the start of the list
+# 2. Add "Glasgow Queen St" to the start of the list
 stops.insert(0, "Glasgow Queen St")
 print(stops)
-#3. Add "Polmont" at the appropriate point (between "Falkirk High" and "Linlithgow")
-stops.insert(4, "Polmont") # insert method adds data to the list BEFORE the element at the index number you type 
+# 3. Add "Polmont" at the appropriate point (between "Falkirk High" and "Linlithgow")
+stops.insert(
+    4, "Polmont"
+)  # insert method adds data to the list BEFORE the element at the index number you type
 print(stops)
-#4. Print out the index position of "Linlithgow"
+# 4. Print out the index position of "Linlithgow"
 print(stops.index("Linlithgow"))
-#5. Remove "Livingston" from the list using its name
-stops.remove("Livingston") # remove method removes the mathcing element from the list 
+# 5. Remove "Livingston" from the list using its name
+stops.remove("Livingston")  # remove method removes the mathcing element from the list
 print(stops)
-#6. Delete "Cumbernauld" from the list by index
+# 6. Delete "Cumbernauld" from the list by index
 stops.pop(2)
-# OR 
-#Cumbernauld_index = stops.index("Cumbernauld")
-#stops.pop(Cumbernauld_index)
+# OR
+# Cumbernauld_index = stops.index("Cumbernauld")
+# stops.pop(Cumbernauld_index)
 print(stops)
-#7. Print the number of stops there are in the list
+# 7. Print the number of stops there are in the list
 print(len(stops))
-#8. Sort the list alphabetically
-stops.sort() # sort method sorts a list alphabetetically 
+# 8. Sort the list alphabetically
+stops.sort()  # sort method sorts a list alphabetetically
 print(stops)
-#9. Reverse the positions of the stops in the list
+# 9. Reverse the positions of the stops in the list
 stops.reverse()
 print(stops)
-#10 Print out all the stops using a for loop
-for stop in stops: 
+# 10 Print out all the stops using a for loop
+for stop in stops:
     print(stop)
 
 
-# Let's move onto the Exercise B 
+# Let's move onto the Exercise B
 
 users = {
-  "Jonathan": {
-    "twitter": "jonnyt",
-    "lottery_numbers": [6, 12, 49, 33, 45, 20],
-    "home_town": "Stirling",
-    "pets": [
-    {
-      "name": "fluffy",
-      "species": "cat"
+    "Jonathan": {
+        "twitter": "jonnyt",
+        "lottery_numbers": [6, 12, 49, 33, 45, 20],
+        "home_town": "Stirling",
+        "pets": [
+            {"name": "fluffy", "species": "cat"},
+            {"name": "fido", "species": "dog"},
+            {"name": "spike", "species": "dog"},
+        ],
     },
-    {
-      "name": "fido",
-      "species": "dog"
+    "Erik": {
+        "twitter": "eriksf",
+        "lottery_numbers": [18, 34, 8, 11, 24],
+        "home_town": "Linlithgow",
+        "pets": [
+            {"name": "nemo", "species": "fish"},
+            {"name": "kevin", "species": "fish"},
+            {"name": "spike", "species": "dog"},
+            {"name": "rupert", "species": "parrot"},
+        ],
     },
-    {
-      "name": "spike",
-      "species": "dog"
-    }
-  ]
-  },
-  "Erik": {
-    "twitter": "eriksf",
-    "lottery_numbers": [18, 34, 8, 11, 24],
-    "home_town": "Linlithgow",
-    "pets": [
-    {
-      "name": "nemo",
-      "species": "fish"
+    "Avril": {
+        "twitter": "bridgpally",
+        "lottery_numbers": [12, 14, 33, 38, 9, 25],
+        "home_town": "Dunbar",
+        "pets": [{"name": "monty", "species": "snake"}],
     },
-    {
-      "name": "kevin",
-      "species": "fish"
-    },
-    {
-      "name": "spike",
-      "species": "dog"
-    },
-    {
-      "name": "rupert",
-      "species": "parrot"
-    }
-  ]
-  },
-  "Avril": {
-    "twitter": "bridgpally",
-    "lottery_numbers": [12, 14, 33, 38, 9, 25],
-    "home_town": "Dunbar",
-    "pets": [
-      {
-        "name": "monty",
-        "species": "snake"
-      }
-    ]
-  }
 }
 
 # 1. Get Jonathan's Twitter handle (i.e. the string `"jonnyt"`)
@@ -101,15 +77,19 @@ print(users["Erik"]["lottery_numbers"])
 # 4. Get the species of Avril's pet Monty
 print(users["Avril"]["pets"][0]["species"])
 # 5. Get the smallest of Erik's lottery numbers
-smallest = min(users["Erik"]["lottery_numbers"]) # min function finds the smallest number in the list 
+smallest = min(
+    users["Erik"]["lottery_numbers"]
+)  # min function finds the smallest number in the list
 print(smallest)
 # 6. Return an list of Avril's lottery numbers that are even
 def only_even(my_list):
     even_list = []
-    for element in my_list: 
-        if element % 2 == 0: 
+    for element in my_list:
+        if element % 2 == 0:
             even_list.append(element)
     return even_list
+
+
 print(only_even(users["Avril"]["lottery_numbers"]))
 # 7. Erik is one lottery number short! Add the number `7` to be included in his lottery numbers
 users["Erik"]["lottery_numbers"].append(7)
@@ -123,16 +103,11 @@ users["Erik"]["pets"].append(new_dict)
 print(users["Erik"]["pets"])
 # 10. Add another person to the users dictionary
 my_dict = {
-    "twitter": "kurkmin", 
-    "lottery number": [1, 2, 3, 4, 5 , 6],
+    "twitter": "kurkmin",
+    "lottery number": [1, 2, 3, 4, 5, 6],
     "home_town": "Seoul",
-    "pets": [
-    {
-        "name": "lucky",
-        "species": "dog"
-    }
-    ]
-    }
+    "pets": [{"name": "lucky", "species": "dog"}],
+}
 users["Sumin"] = my_dict
 print(users["Sumin"])
 
@@ -140,21 +115,9 @@ print(users["Sumin"])
 # Let's move onto the Exercise C
 
 united_kingdom = [
-  {
-    "name": "Scotland",
-    "population": 5295000,
-    "capital": "Edinburgh"
-  },
-  {
-    "name": "Wales",
-    "population": 3063000,
-    "capital": "Swansea"
-  },
-  {
-    "name": "England",
-    "population": 53010000,
-    "capital": "London"
-  }
+    {"name": "Scotland", "population": 5295000, "capital": "Edinburgh"},
+    {"name": "Wales", "population": 3063000, "capital": "Swansea"},
+    {"name": "England", "population": 53010000, "capital": "London"},
 ]
 
 # 1. Change the capital of Wales from `"Swansea"` to `"Cardiff"`.
@@ -167,52 +130,80 @@ print(united_kingdom)
 # 3. Use a loop to print the names of all the countries in the UK.
 for country in united_kingdom:
     print(country["name"])
-# 4. Use a loop to find the total population of the UK. 
-total = 0 
+# 4. Use a loop to find the total population of the UK.
+total = 0
 for country in united_kingdom:
     total = total + country["population"]
 print(total)
 
 
-# Let's move onto the Exercise D 
+# Let's move onto the Exercise D
 
-#For the following list of numbers:
+# For the following list of numbers:
 
 numbers = [1, 6, 2, 2, 7, 1, 6, 13, 99, 7]
 
 # 1. Print out a list of the even integers:
 even_list = []
-for num in numbers: 
-    if num%2 != 1:
+for num in numbers:
+    if num % 2 != 1:
         even_list.append(num)
 print(even_list)
 
 # 2. Print the difference between the largest and smallest value:
 smallest = min(numbers)
 largest = max(numbers)
-diff = largest - smallest 
+diff = largest - smallest
 print(diff)
 
 # 3. Print True if the list contains a 2 next to a 2 somewhere.
-#for number in numbers:
+# for number in numbers:
 #    if number == numbers[number+1]:
 #        print("true")
 
-# 4. Print the sum of the numbers, 
+#result = False
+#index = 0
+#for number in numbers:
+    #if number == 2 and numbers[index - 1] == 2 and index != 0 : # if number ==2 AND numbers[current index -1] = 2 AND avoide index [-1] just in case if the first element is 2 and the last element one is also 2 
+      # return True
+    #index += 1
+# print(result)
+
+# result = False
+# for index, number in enumerate(numbers): (enmerate returns a pair (index, the data at that index))
+#  if number == 2 and numbers[index - 1] == 2 and index != 0:
+#    return True
+# print(result)
+
+
+# 4. Print the sum of the numbers,
 #    BUT ignore any section of numbers starting with a 6 and extending to the next 7.
-#    
+#
 #    So [11, 6, 4, 99, 7, 11] would have sum of 22
-
+numbers = [11, 6, 4, 99, 7, 11]
 total = 0
+found_6 = False
 for number in numbers: 
-    if number != 13: 
-        total += number 
-print(total)
+  if number == 6: 
+    found_6 == True 
+  elif found_6:
+    if number == 7:
+      found_6 == False 
+  else:
+    total += number 
 
 
-# 5. HARD! Print the sum of the numbers. 
+
+
+# 5. HARD! Print the sum of the numbers.
 #    Except the number 13 is very unlucky, so it does not count.
 #    And numbers that come immediately after a 13 also do not count.
 #    HINT - You will need to track the index throughout the loop.
 #
-#    So [5, 13, 2] would have sum of 5. 
+#    So [5, 13, 2] would have sum of 5.
+
+total = 0
+for number in numbers:
+    if number != 13:
+        total += number
+print(total)
